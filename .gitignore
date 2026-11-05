@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Letterboxd Dataset
+data/raw/*
+data/processed/*
+
+# Keep empty data directories
+!data/raw/.gitkeep
+!data/processed/.gitkeep
