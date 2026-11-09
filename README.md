@@ -41,6 +41,29 @@ The dataset was collected from approximately 4,000 of the most active Letterboxd
 
 ## Data Exploration & Quality Assessment
 
+The initial exploration assessed data completeness, consistency, duplicates, and relationships across the three datasets.
+
+### Data Quality Summary
+
+| Check | Key Findings |
+|---|---|
+| CSV Structure | 573 malformed parsed records identified in the Movies dataset. |
+| Missing Values | 3.73% of movie records have missing genres, while 2.65% have missing release years. |
+| Duplicates | No duplicates detected in structurally valid movie records, user records, or valid rating identifiers and user-movie pairs. |
+| Rating Validation | All 11,078,167 ratings fall within the expected range of 1–10. |
+| Release Years | 23 records contain years requiring further review. |
+| Relational Integrity | 99.98% of ratings match both a movie and a user. |
+| Genre Coverage | 22.05% of structurally valid movie records have missing or empty genres. |
+
+### Key Observations
+
+- The Movies CSV contains malformed multiline descriptions, requiring structural repair before further processing.
+- Missing genre and release year information may affect specific analyses.
+- Most rating records have valid references, although unmatched movie and user IDs require investigation.
+- The dataset shows no duplicate records within the validated subsets examined.
+
+**Note:** Movie-related findings are preliminary and will be reassessed after repairing the malformed CSV structure. No original data was modified during exploratio
+
 ## Data Cleaning & Preparation
 
 ## Exploratory Data Analysis (EDA)
