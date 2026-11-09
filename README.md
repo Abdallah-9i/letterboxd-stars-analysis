@@ -1,5 +1,7 @@
 # Letterboxd Stars Analysis
 
+> 🚧 **Work in Progress**
+
 ## Project Overview & Objectives
 
 This project analyzes movie ratings and user preferences on Letterboxd to explore audience behavior, genre popularity, and rating patterns across different movie release years.
@@ -13,7 +15,10 @@ This project analyzes movie ratings and user preferences on Letterboxd to explor
 
 ## Dataset
 
-**Source:** [Letterboxd Movie Ratings Data – Kaggle](https://www.kaggle.com/datasets/samlearner/letterboxd-movie-ratings-data)
+**Source:** [Letterboxd Movie Ratings Data](https://www.kaggle.com/datasets/samlearner/letterboxd-movie-ratings-data) by Sam Learner.
+
+**License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
 
 The dataset consists of three CSV files containing movie information, user profiles, and movie ratings.
 
@@ -23,11 +28,11 @@ The dataset consists of three CSV files containing movie information, user profi
 | `ratings_export.csv` | 11,078,167 | Movie ratings submitted by users |
 | `users_export.csv` | 8,139 | User profiles and activity information |
 
-*These figures represent raw record counts before data cleaning and validation.*
+*These figures represent raw CSV row counts before data cleaning. The Movies dataset includes malformed parsed records that require structural repair.*
 
 **Sampling Note:**
 
-The dataset was collected from approximately 4,000 of the most active Letterboxd users in a given month, rather than a random sample of the platform's user base. As a result, the findings may not represent the preferences and rating behavior of all Letterboxd users.
+The dataset contains 8,139 unique users. According to the dataset creator, ratings were collected from the top 4,000 Letterboxd users in any given month. Since the sample is not randomly selected, the findings may not represent the preferences and rating behavior of the entire Letterboxd community.
 
 
 
