@@ -62,7 +62,7 @@ The initial exploration assessed data completeness, consistency, duplicates, and
 - Most rating records have valid references, although unmatched movie and user IDs require investigation.
 - The dataset shows no duplicate records within the validated subsets examined.
 
-**Note:** Movie-related findings are preliminary and will be reassessed after repairing the malformed CSV structure. No original data was modified during exploratio
+**Note:** Movie-related findings are preliminary and will be reassessed after repairing the malformed CSV structure. No original data was modified during exploration
 
 ## Data Cleaning & Preparation
 
