@@ -1,5 +1,7 @@
 # Letterboxd Stars Analysis
 
+> 🚧 **Work in Progress**
+
 ## Project Overview & Objectives
 
 This project analyzes movie ratings and user preferences on Letterboxd to explore audience behavior, genre popularity, and rating patterns across different movie release years.
@@ -13,7 +15,10 @@ This project analyzes movie ratings and user preferences on Letterboxd to explor
 
 ## Dataset
 
-**Source:** [Letterboxd Movie Ratings Data – Kaggle](https://www.kaggle.com/datasets/samlearner/letterboxd-movie-ratings-data)
+**Source:** [Letterboxd Movie Ratings Data](https://www.kaggle.com/datasets/samlearner/letterboxd-movie-ratings-data) by Sam Learner.
+
+**License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
 
 The dataset consists of three CSV files containing movie information, user profiles, and movie ratings.
 
@@ -23,11 +28,11 @@ The dataset consists of three CSV files containing movie information, user profi
 | `ratings_export.csv` | 11,078,167 | Movie ratings submitted by users |
 | `users_export.csv` | 8,139 | User profiles and activity information |
 
-*These figures represent raw record counts before data cleaning and validation.*
+*These figures represent raw CSV row counts before data cleaning. The Movies dataset includes malformed parsed records that require structural repair.*
 
 **Sampling Note:**
 
-The dataset was collected from approximately 4,000 of the most active Letterboxd users in a given month, rather than a random sample of the platform's user base. As a result, the findings may not represent the preferences and rating behavior of all Letterboxd users.
+The dataset contains 8,139 unique users. According to the dataset creator, ratings were collected from the top 4,000 Letterboxd users in any given month. Since the sample is not randomly selected, the findings may not represent the preferences and rating behavior of the entire Letterboxd community.
 
 
 
@@ -40,6 +45,29 @@ The dataset was collected from approximately 4,000 of the most active Letterboxd
 - **Git & GitHub:** Version control and project documentation.
 
 ## Data Exploration & Quality Assessment
+
+The initial exploration assessed data completeness, consistency, duplicates, and relationships across the three datasets.
+
+### Data Quality Summary
+
+| Check | Key Findings |
+|---|---|
+| CSV Structure | 573 malformed parsed records identified in the Movies dataset. |
+| Missing Values | 3.73% of movie records have missing genres, while 2.65% have missing release years. |
+| Duplicates | No duplicates detected in structurally valid movie records, user records, or valid rating identifiers and user-movie pairs. |
+| Rating Validation | All 11,078,167 ratings fall within the expected range of 1–10. |
+| Release Years | 23 records contain years requiring further review. |
+| Relational Integrity | 99.98% of ratings match both a movie and a user. |
+| Genre Coverage | 22.05% of structurally valid movie records have missing or empty genres. |
+
+### Key Observations
+
+- The Movies CSV contains malformed multiline descriptions, requiring structural repair before further processing.
+- Missing genre and release year information may affect specific analyses.
+- Most rating records have valid references, although unmatched movie and user IDs require investigation.
+- The dataset shows no duplicate records within the validated subsets examined.
+
+**Note:** Movie-related findings are preliminary and will be reassessed after repairing the malformed CSV structure. No original data was modified during exploration
 
 ## Data Cleaning & Preparation
 
